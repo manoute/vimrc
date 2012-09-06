@@ -21,6 +21,7 @@ VIM PERSO
     ```
 
 4. Installer les plugins vim
+
     Lance `vim`, exécuter `:BundleInstall` 
 
 
