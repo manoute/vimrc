@@ -20,8 +20,8 @@ VIM PERSO
     $ git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
     ```
 
-4. Installer les plugins vim
+4. Installer les plugins vim via [vundle](https://github.com/gmarik/vundle)
 
-    Lance `vim`, exécuter `:BundleInstall` 
+    Lancer `vim`, exécuter `:BundleInstall` 
 
 
