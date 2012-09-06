@@ -1,5 +1,4 @@
-VIM PERSO
-===========
+## .VIM PERSO
 
 1. Installer les fichiers:
 
