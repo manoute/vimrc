@@ -27,14 +27,16 @@
 
 1. Configurer vim pour les 256 colors et ajouter dans le .profile
 
+    ```
     if [ -e /usr/share/terminfo/x/xterm-256color ]; then
             export TERM='xterm-256color'
     else
             export TERM='xterm-color'
     fi
+    ```
 
 
-2. eventuellement, installer [gnome-terminal-colors-solarized](https://github.com/sigurdga/gnome-terminal-colors-solarized)
+2. Éventuellement, installer [gnome-terminal-colors-solarized](https://github.com/sigurdga/gnome-terminal-colors-solarized)
 
 Cloner le dépôt git, puis exécuter un des scripts set_light.sh ou set_dark.sh.
 
