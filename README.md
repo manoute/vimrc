@@ -33,9 +33,11 @@ Notes pour solarized et gnome terminal
 
     Cloner le dépôt git, puis exécuter :
 
+    ```
     $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
     $ cd gnome-terminal-colors-solarized
     $ ./install.sh
+    ```
 
     Le choix de light ou dark doit être en accord avec celui de .vim/after/plugin/vim-colors-solarized.vim
 
