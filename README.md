@@ -1,4 +1,5 @@
-## .VIM PERSO
+.VIM PERSO
+==========
 
 1. Installer les fichiers:
 
@@ -23,25 +24,19 @@
 
     Lancer `vim`, exécuter `:BundleInstall` 
 
-# Notes pour solarized et gnome terminal
+Notes pour solarized et gnome terminal
+--------------------------------------
 
-1. Configurer vim pour les 256 colors et ajouter dans le .profile
+1. Créer un nouveau profil pour gnome-terminal (Edition -> Profils)
 
-    ```
-    if [ -e /usr/share/terminfo/x/xterm-256color ]; then
-            export TERM='xterm-256color'
-    else
-            export TERM='xterm-color'
-    fi
-    ```
+2. Installer [gnome-terminal-colors-solarized](https://github.com/sigurdga/gnome-terminal-colors-solarized)
 
-
-2. Éventuellement, installer [gnome-terminal-colors-solarized](https://github.com/sigurdga/gnome-terminal-colors-solarized)
-
-Cloner le dépôt git, puis exécuter un des scripts set_light.sh ou set_dark.sh.
+    Cloner le dépôt git, puis exécuter :
 
     $ git clone git://github.com/sigurdga/gnome-terminal-colors-solarized.git
     $ cd gnome-terminal-colors-solarized
     $ ./install.sh
+
+    Le choix de light ou dark doit être en accord avec celui de .vim/after/plugin/vim-colors-solarized.vim
 
 
