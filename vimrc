@@ -36,6 +36,8 @@ Bundle "godlygeek/tabular"
 Bundle "altercation/vim-colors-solarized"
 Bundle "nathanaelkane/vim-indent-guides"
 Bundle "bbommarito/vim-slim"
+Bundle "tpope/vim-fugitive"
+Bundle 'Lokaltog/vim-easymotion'
 
 Bundle "UltiSnips"
 
