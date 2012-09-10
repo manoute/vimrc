@@ -7,7 +7,7 @@
      $ git clone https://github.com/manoute/vimrc.git ~/.vim
      ```
 
-2. Créer un lien symbolique pour le .vimrc
+2. Créer un lien symbolique pour le .vimrc  
 
     ```
     $ cd
