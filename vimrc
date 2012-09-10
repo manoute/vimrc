@@ -38,6 +38,7 @@ Bundle "nathanaelkane/vim-indent-guides"
 Bundle "bbommarito/vim-slim"
 Bundle "tpope/vim-fugitive"
 Bundle 'Lokaltog/vim-easymotion'
+Bundle ' plasticboy/vim-markdown'
 
 Bundle "UltiSnips"
 
