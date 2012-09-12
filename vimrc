@@ -40,6 +40,7 @@ Bundle "tpope/vim-fugitive"
 Bundle 'Lokaltog/vim-easymotion'
 
 Bundle "UltiSnips"
+Bundle "bash-support"
 
 filetype indent plugin on
 " Enable syntax highlighting
