@@ -29,7 +29,6 @@ Bundle 'gmarik/vundle'
 
 "Github
 Bundle "scrooloose/nerdtree"
-Bundle "msanders/snipmate.vim"
 Bundle "ervandew/supertab"
 Bundle "tpope/vim-surround"
 Bundle "godlygeek/tabular"
@@ -39,6 +38,7 @@ Bundle "bbommarito/vim-slim"
 Bundle "tpope/vim-fugitive"
 Bundle 'Lokaltog/vim-easymotion'
 
+"vim-script
 Bundle "UltiSnips"
 
 filetype indent plugin on
