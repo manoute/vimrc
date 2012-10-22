@@ -1,0 +1,130 @@
+##########
+# COMMON #
+##########
+
+# The smart def and smart class snippets use a global option called
+# "g:ultisnips_python_style" which, if set to "doxygen" will use doxygen
+# style comments in docstrings.
+
+global !p
+
+NORMAL  = 0x1
+DOXYGEN = 0x2
+SPHINX  = 0x3
+
+def get_args(arglist):
+    args = [arg.split('=')[0].strip() for arg in arglist.split(',') if arg]
+    args = [arg for arg in args if arg and arg != "self"]
+
+    return args
+
+
+def get_style(snip):
+    style = snip.opt("g:ultisnips_python_style", "normal")
+
+    if    style == "doxygen": return DOXYGEN
+    elif  style == "sphinx": return SPHINX
+    else: return NORMAL
+
+
+def format_arg(arg, style):
+    if style == DOXYGEN:
+        return "@param %s @todo" % arg
+    elif style == SPHINX:
+        return ":param %s: @todo" % arg
+    elif style == NORMAL:
+        return ":%s: @todo" % arg
+
+def format_declaration_in(arg):
+    return ", intent(in) :: %s\n" % arg
+
+def format_return(style):
+    if style == DOXYGEN:
+        return "@return: @todo"
+    elif style in (NORMAL, SPHINX):
+        return ":returns: @todo"
+
+
+def write_docstring_args(args, snip):
+    if not args:
+        snip.rv += ' """'
+        return
+
+    snip.rv += '\n' + snip.mkline('', indent='')
+
+    style = get_style(snip)
+
+    for arg in args:
+        snip += format_declaration(arg)
+
+def write_declarations_in(args, snip):
+    if not args:
+        return
+    snip.rv += '\n' + snip.mkline('', indent='')
+    for arg in args:
+        snip += format_declaration_in(arg)
+
+def write_init_body(args, parents, snip):
+    parents = [p.strip() for p in parents.split(",")]
+    parents = [p for p in parents if p != 'object']
+
+    for p in parents:
+        snip += p + ".__init__(self)"
+
+    if parents:
+        snip.rv += '\n' + snip.mkline('', indent='')
+
+    for arg in args:
+        snip += "self._%s = %s" % (arg, arg)
+
+
+def write_slots_args(args, snip):
+    args = ['"%s"' % arg for arg in args]
+    snip += '__slots__ = (%s,)' % ', '.join(args)
+
+endglobal
+
+
+snippet puref "pure function" b
+pure function ${1:my_function}(`!p
+if snip.indent:
+  snip.rv = (", " if len(t[2]) else "")`${2:arg1}) & 
+    result(${3:return_value}) `!p
+snip.rv = ""
+snip >> 1
+
+for arg in get_args(t[2]):
+  snip += ", intent(in) :: {0}".format(arg)
+
+snip += ":: {0}".format(t[3])
+`
+	${0} 
+end function $1
+endsnippet
+
+snippet module "module" !b
+module ${1:my_mod}
+  use ${2:module_name} , only : ${3:only_list}
+
+  implicit none
+  private
+  protected :: ${4:access_id_list}
+  public :: ${5:access_id_list}
+
+  ! declaration of named constants
+
+  ! derived type definitions
+
+  ! interfaces
+
+  ! variables whose scope is the entire module
+
+contains
+  ! alphabetical ordering of all module procedures, both public and private.
+  $0
+end module $1
+endsnippet
+
+
+
+
