@@ -37,6 +37,10 @@ Bundle "nathanaelkane/vim-indent-guides"
 Bundle "bbommarito/vim-slim"
 Bundle "tpope/vim-fugitive"
 Bundle 'Lokaltog/vim-easymotion'
+Bundle "kchmck/vim-coffee-script"
+Bundle "stonean/slim"
+Bundle "tpope/vim-markdown"
+Bundle "jtratner/vim-flavored-markdown"
 
 "vim-script
 Bundle "UltiSnips"
@@ -198,3 +202,10 @@ highlight SpecialKey guifg=#4a4a59
 for f in split(glob('~/.vim/after/plugin/*.vim'), '\n')
   exe 'source' f 
 endfor
+
+augroup markdown
+    au!
+    au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=ghmarkdown
+augroup END
+
+
