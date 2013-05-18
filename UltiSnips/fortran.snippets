@@ -236,3 +236,29 @@ if ${1:condition} then
   $0
 end if
 endsnippet
+
+snippet iso "use iso_fortran_env" !b
+use iso_fortran_env
+endsnippet
+
+snippet opennew "replacreplace file with newunit" !b
+open ( newunit=${1:my_unit} ,file=${2:my_file}, &
+  status='${3:old}',action='${4:read}',iostat=${5:ioerr},&
+  iomsg=${6:iotxt})
+endsnippet
+
+snippet iodec "Initialisation de variables pour les IO" !b
+integer,parameter::IOMSGLEN=200
+character(*),parameter:: ${1:MY_FILE}='${2:my_file}'
+character(len=IOMSGLEN)::iotxt
+integer::ioerr,${3:my_unit}
+endsnippet
+
+snippet iocheck "Vérifie que open s'est bien passé" !b
+if (ioerr/=0) then
+  write(ERROR_UNIT,*) '${1:problem with }', ${2:MY_FILE}
+  write(ERROR_UNIT,*) 'message: ', trim(iotxt)
+  stop 1 !Or return an error to the caller.
+endif
+endsnippet
+

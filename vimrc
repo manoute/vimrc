@@ -34,13 +34,13 @@ Bundle "tpope/vim-surround"
 Bundle "godlygeek/tabular"
 Bundle "altercation/vim-colors-solarized"
 Bundle "nathanaelkane/vim-indent-guides"
-Bundle "bbommarito/vim-slim"
 Bundle "tpope/vim-fugitive"
 Bundle 'Lokaltog/vim-easymotion'
 Bundle "kchmck/vim-coffee-script"
-Bundle "stonean/slim"
 Bundle "tpope/vim-markdown"
+Bundle "tpope/vim-git"
 Bundle "jtratner/vim-flavored-markdown"
+Bundle "jcfaria/Vim-R-plugin"
 
 "vim-script
 Bundle "UltiSnips"
