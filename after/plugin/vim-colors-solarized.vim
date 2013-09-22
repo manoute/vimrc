@@ -2,7 +2,8 @@ if has('gui_running')
   set background=dark
   colorscheme solarized
 else
-  set background=light
-  set t_Co=16
+  set background=dark
+  set t_Co=256
+  let g:solarized_termcolors=256
   colorscheme solarized
 endif
