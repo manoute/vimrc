@@ -214,4 +214,24 @@ augroup markdown
     au BufNewFile,BufRead *.md,*.markdown,*.mkd setlocal filetype=ghmarkdown
 augroup END
 
+" Colorschemes depending on hostname
+let hostname = substitute(system('hostname'), '\n', '', '')
+if hostname == "rhone310X"
+  colorscheme codeschool   
+  set gfn=Inconsolata\ Medium\ 14
+elseif hostname == "orphie"
+  colorscheme twilight   
+else
+  colorscheme solarized
+endif
+
+" Solarized light sans gvim
+if has('gui_running')
+  set background=dark
+else
+  set background=light
+  set t_Co=256
+  let g:solarized_termcolors=256
+  colorscheme solarized
+endif
 
