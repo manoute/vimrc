@@ -166,8 +166,11 @@ else
   colorscheme default
 endif
 
-set gfn=Monospace\ 14
+set gfn=Inconsolata-g\ Medium\ 14
+
 "------------------------------------------------------------
+
+
 " Mappings {{{1
 "
 " Useful mappings
@@ -215,19 +218,20 @@ augroup markdown
 augroup END
 
 " Colorschemes depending on hostname
-let hostname = substitute(system('hostname'), '\n', '', '')
-if hostname == "rhone310X"
-  colorscheme codeschool   
-  set gfn=Inconsolata\ Medium\ 14
-elseif hostname == "orphie"
-  colorscheme twilight   
-else
-  colorscheme solarized
-endif
+"let hostname = substitute(system('hostname'), '\n', '', '')
+"if hostname == "rhone310X"
+"  colorscheme codeschool   
+"  set gfn=Inconsolata\ Medium\ 14
+"elseif hostname == "orphie"
+"  colorscheme twilight   
+"else
+"  colorscheme solarized
+"endif
 
-" Solarized light sans gvim
+" Solarized light
 if has('gui_running')
   set background=dark
+  colorscheme solarized
 else
   set background=light
   set t_Co=16
